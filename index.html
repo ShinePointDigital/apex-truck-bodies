@@ -1,86 +1,79 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Apex Truck Bodies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: Wil-Ro-style catalog. Utility bar, full-bleed banner hero, metrics, category grid, spec matrix, split quote, dealer band. Crimson marks action and category only */
+/* Layout: dark industrial catalog. Animated hero with floating metrics bar, then product grid, plant banner, spec matrix, 3-step quote builder, dealer card */
 :root{
+  --bg:#090D16;
+  --panel:#0F172A;
+  --panel-2:#151D2E;
+  --line:#243049;
+  --line-strong:#334155;
+  --text:#E2E8F0;
+  --muted:#94A3B8;
   --white:#FFFFFF;
-  --paper:#F8FAFC;
-  --paper-2:#F1F5F9;
-  --line:#E2E8F0;
-  --line-strong:#CBD5E1;
-  --ink:#0F172A;
-  --deep:#1E293B;
-  --slate:#475569;
-  --muted:#64748B;
   --red:#DC2626;
   --red-hover:#B91C1C;
-  --red-tint:#FEF2F2;
-  --ok:#15803D;
+  --red-text:#F87171;
+  --ok:#4ADE80;
   --f-display:"Montserrat","Helvetica Neue",Arial,sans-serif;
   --f-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --gutter:clamp(16px,4vw,48px);
   --max:1320px;
-  --shadow:0 1px 2px rgba(15,23,42,.06),0 10px 28px rgba(15,23,42,.08);
-  color-scheme:light;
+  color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-body{background:var(--white);color:var(--slate);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 img{max-width:100%;display:block}
-h1,h2,h3{font-family:var(--f-display);color:var(--ink);line-height:1.12;text-wrap:balance;margin:0}
+h1,h2,h3{font-family:var(--f-display);color:var(--white);line-height:1.1;text-wrap:balance;margin:0}
 p{margin:0}
 .wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
-.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red-text)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--white);padding:10px 14px;font-weight:700;z-index:100}
+.skip{position:absolute;left:-999px;top:8px;background:var(--red);color:var(--white);padding:10px 14px;font-weight:700;z-index:100}
 .skip:focus{left:16px}
-:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+:focus-visible{outline:3px solid var(--white);outline-offset:3px}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 24px;font-family:var(--f-body);font-weight:700;font-size:.95rem;text-decoration:none;border:2px solid transparent;border-radius:3px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
 .btn svg{width:18px;height:18px;flex:none}
 .btn-red{background:var(--red);color:var(--white)}
 .btn-red:hover{background:var(--red-hover)}
-.btn-white{background:var(--white);color:var(--ink)}
-.btn-white:hover{background:var(--paper-2)}
-.btn-line{background:transparent;color:var(--white);border-color:var(--white)}
-.btn-line:hover{background:var(--white);color:var(--ink)}
-.hero :focus-visible,.dealer :focus-visible{outline-color:var(--white)}
+.btn-line{background:transparent;color:var(--white);border-color:rgba(255,255,255,.55)}
+.btn-line:hover{background:var(--white);color:var(--bg)}
+.btn-dark{background:var(--bg);color:var(--white);border-color:var(--line-strong)}
+.btn-dark:hover{border-color:var(--white)}
 
-/* Utility bar */
-.topbar{background:var(--ink);color:#CBD5E1;font-size:.82rem}
+/* Utility bar + header */
+.topbar{background:#05080F;border-bottom:1px solid var(--line);font-size:.82rem;color:var(--muted)}
 .topbar .wrap{display:flex;gap:8px 24px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding-block:8px}
 .topbar a{text-decoration:none}
 .topbar a:hover{color:var(--white);text-decoration:underline}
 .topbar strong{color:var(--white);font-variant-numeric:tabular-nums}
 .top-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-.ntea{display:inline-flex;align-items:center;gap:6px;border:1px solid #475569;border-radius:3px;padding:2px 10px;font-weight:700;font-size:.74rem;letter-spacing:.06em;color:var(--white)}
-.ntea svg{width:13px;height:13px;color:var(--red)}
+.ntea{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-strong);border-radius:3px;padding:2px 10px;font-weight:700;font-size:.74rem;letter-spacing:.06em;color:var(--white)}
+.ntea svg{width:13px;height:13px;color:var(--red-text)}
 @media (max-width:640px){.topbar .tagline{display:none}}
-
-/* Header */
-header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--white);border-bottom:1px solid var(--line)}
-header.site .wrap{display:flex;align-items:center;gap:28px;min-height:80px}
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(9,13,22,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;gap:28px;min-height:78px}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
-.logo-mark{width:44px;height:44px;background:var(--red);display:grid;place-items:center;border-radius:3px}
-.logo-mark svg{width:26px;height:26px}
-.logo-text{font-family:var(--f-display);font-weight:800;letter-spacing:.03em;color:var(--ink);line-height:1;font-size:1.15rem}
-.logo-text small{display:block;font-family:var(--f-body);font-weight:600;font-size:.64rem;letter-spacing:.18em;color:var(--muted);margin-top:5px}
+.logo-mark{width:42px;height:42px;background:var(--red);display:grid;place-items:center;border-radius:3px}
+.logo-mark svg{width:25px;height:25px}
+.logo-text{font-family:var(--f-display);font-weight:800;letter-spacing:.03em;color:var(--white);line-height:1;font-size:1.1rem}
+.logo-text small{display:block;font-family:var(--f-body);font-weight:600;font-size:.62rem;letter-spacing:.18em;color:var(--muted);margin-top:5px}
 nav.primary{margin-left:auto}
 nav.primary ul{display:flex;gap:6px;list-style:none;margin:0;padding:0}
-nav.primary a{display:block;padding:10px 14px;font-weight:600;font-size:.95rem;text-decoration:none;color:var(--deep);border-bottom:3px solid transparent}
-nav.primary a:hover{color:var(--ink);border-bottom-color:var(--red)}
-.menu-btn{display:none;margin-left:auto;background:var(--white);border:1px solid var(--line-strong);color:var(--ink);width:48px;height:48px;border-radius:3px;cursor:pointer}
+nav.primary a{display:block;padding:10px 14px;font-weight:600;font-size:.93rem;text-decoration:none;color:var(--text);border-bottom:3px solid transparent}
+nav.primary a:hover{color:var(--white);border-bottom-color:var(--red)}
+.menu-btn{display:none;margin-left:auto;background:transparent;border:1px solid var(--line-strong);color:var(--white);width:48px;height:48px;border-radius:3px;cursor:pointer}
 .menu-btn svg{width:22px;height:22px}
 .nav-cta{display:none;margin-top:12px}
 .nav-cta .btn{width:100%}
 @media (max-width:1000px){
   .menu-btn{display:grid;place-items:center}
-  nav.primary{position:absolute;left:0;right:0;top:100%;background:var(--white);border-bottom:1px solid var(--line);box-shadow:var(--shadow);margin:0;display:none}
+  nav.primary{position:absolute;left:0;right:0;top:100%;background:var(--panel);border-bottom:1px solid var(--line);margin:0;display:none}
   nav.primary.open{display:block}
   nav.primary ul{flex-direction:column;padding:8px var(--gutter) 16px}
   nav.primary a{padding:14px 0;border-bottom:1px solid var(--line)}
@@ -88,193 +81,196 @@ nav.primary a:hover{color:var(--ink);border-bottom-color:var(--red)}
   .nav-cta{display:block}
 }
 
-/* Hero: full-bleed banner */
-.hero{position:relative;background:var(--ink);isolation:isolate;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:
-  radial-gradient(900px 500px at 85% 20%,rgba(220,38,38,.22),transparent 60%),
-  radial-gradient(800px 600px at 0% 100%,rgba(51,65,85,.55),transparent 60%),
-  linear-gradient(135deg,#0F172A 0%,#1E293B 100%)}
-.hero-bg::before{content:"";position:absolute;inset:-64px;background:
-  linear-gradient(rgba(226,232,240,.07) 1px,transparent 1px) 0 0/64px 64px,
-  linear-gradient(90deg,rgba(226,232,240,.07) 1px,transparent 1px) 0 0/64px 64px;
-  animation:drift 24s linear infinite}
-@keyframes drift{to{transform:translate(64px,64px)}}
-.hero-bg video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.25;z-index:0}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,23,42,.65) 0%,rgba(15,23,42,.15) 100%)}
-.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,55fr) minmax(0,45fr);gap:clamp(32px,5vw,72px);align-items:center;padding-block:clamp(56px,8vw,104px)}
-.hero-copy{max-width:660px}
-.feature{background:var(--white);border-radius:8px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45);min-width:0}
-.feature-media{position:relative;height:320px;background:linear-gradient(135deg,var(--paper-2),var(--line-strong));overflow:hidden}
-.feature-media .fallback{position:absolute;inset:0;display:flex;align-items:flex-end;padding:16px;font-size:.8rem;font-weight:600;color:var(--muted)}
-.feature-media img{position:relative;width:100%;height:320px;object-fit:cover;border-radius:8px 8px 0 0}
-.spec-badge{position:absolute;right:12px;bottom:12px;max-width:calc(100% - 24px);background:var(--red);color:var(--white);padding:10px 14px;border-radius:4px;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.4;box-shadow:0 6px 18px rgba(0,0,0,.35)}
-.spec-badge span{display:block}
-.spec-badge span + span{border-top:1px solid rgba(255,255,255,.4);margin-top:4px;padding-top:4px}
-.feature-body{padding:20px 22px 22px}
-.feature-body .tag{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
-.feature-body h2{font-size:1.25rem;font-weight:800;margin-top:4px}
-.feature-body dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 0}
-.feature-body dl div{border-left:3px solid var(--red);padding-left:10px}
-.feature-body dt{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.feature-body dd{margin:2px 0 0;font-family:var(--f-display);font-weight:800;color:var(--ink);font-size:1.05rem;font-variant-numeric:tabular-nums}
-@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.feature-media,.feature-media img{height:240px}}
-@media (prefers-reduced-motion:reduce){.hero-bg::before{animation:none}}
-.badge-row{display:flex;gap:10px;flex-wrap:wrap}
-.chip{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white);border:1px solid rgba(255,255,255,.45);border-radius:3px;padding:4px 10px}
-.chip.red{background:var(--red);border-color:var(--red)}
-.hero h1{color:var(--white);font-size:clamp(2.1rem,4.4vw,3.7rem);font-weight:800;letter-spacing:-.015em;margin-top:22px}
-.hero .lede{color:#E2E8F0;font-size:clamp(1rem,1.3vw,1.18rem);max-width:56ch;margin-top:20px}
+/* Hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--bg)}
+.hero-photo{position:absolute;inset:0;z-index:-3;background:linear-gradient(135deg,#0F172A,#1E293B)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;animation:heroZoom 26s ease-in-out infinite alternate;transform-origin:60% 50%}
+.hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(9,13,22,.95) 0%,rgba(9,13,22,.82) 45%,rgba(9,13,22,.45) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 35%)}
+.hero-glow{position:absolute;z-index:-1;border-radius:50%;filter:blur(70px);pointer-events:none;animation:pulseGlow 7s ease-in-out infinite}
+.hero-glow.g1{width:520px;height:520px;right:-120px;top:-140px;background:rgba(220,38,38,.38)}
+.hero-glow.g2{width:460px;height:460px;left:-160px;bottom:-120px;background:rgba(51,65,85,.7);animation-delay:-3.5s}
+.hero-grid{position:absolute;inset:-64px;z-index:-1;background:
+  linear-gradient(rgba(226,232,240,.06) 1px,transparent 1px) 0 0/64px 64px,
+  linear-gradient(90deg,rgba(226,232,240,.06) 1px,transparent 1px) 0 0/64px 64px;
+  animation:gridShift 20s linear infinite}
+@keyframes gridShift{to{transform:translate(64px,64px)}}
+@keyframes pulseGlow{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:.9;transform:scale(1.12)}}
+@keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.1)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.hero .wrap{padding-block:clamp(56px,9vw,128px) clamp(120px,14vw,170px)}
+.hero-copy{max-width:760px}
+.fade{animation:fadeUp .8s ease both}
+.fade.d1{animation-delay:.1s}.fade.d2{animation-delay:.25s}.fade.d3{animation-delay:.4s}.fade.d4{animation-delay:.55s}
+.status{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);border:1px solid var(--line-strong);background:rgba(15,23,42,.7);border-radius:999px;padding:6px 14px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok);animation:blink 1.6s ease-in-out infinite}
+.hero h1{font-size:clamp(2.2rem,5vw,4.2rem);font-weight:900;letter-spacing:-.02em;margin-top:22px;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--red-text)}
+.hero .lede{font-size:clamp(1rem,1.35vw,1.2rem);max-width:58ch;margin-top:22px;color:var(--text)}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-@media (max-width:520px){.hero .ctas .btn{width:100%}.feature-body dl{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.hero .ctas .btn{width:100%}}
 
-/* Metrics */
-.stats{background:var(--white);border-bottom:1px solid var(--line)}
-.stats ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.stats li{padding:30px 24px;border-right:1px solid var(--line)}
-.stats li:first-child{padding-left:0}
-.stats li:last-child{border-right:0}
-.stats b{display:block;font-family:var(--f-display);font-weight:800;font-size:clamp(1.6rem,2.6vw,2.2rem);color:var(--red);font-variant-numeric:tabular-nums;line-height:1.1}
-.stats span{font-size:.9rem;color:var(--slate)}
-@media (max-width:760px){
-  .stats ul{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .stats li{padding:20px 16px}
-  .stats li:nth-child(odd){padding-left:0}
-  .stats li:nth-child(2){border-right:0}
-  .stats li:nth-child(-n+2){border-bottom:1px solid var(--line)}
-}
+/* Floating metrics */
+.metrics-float{position:relative;z-index:5;margin-top:-72px}
+.metrics{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:var(--panel);border:1px solid var(--line-strong);border-top:4px solid var(--red);border-radius:4px;box-shadow:0 24px 60px rgba(0,0,0,.55)}
+.metrics li{padding:26px 28px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.metrics li:last-child{border-right:0}
+.metrics b{font-family:var(--f-display);font-weight:900;font-size:clamp(1.7rem,3vw,2.5rem);color:var(--white);font-variant-numeric:tabular-nums;line-height:1.1}
+.metrics span{font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red-text)}
+@media (max-width:700px){.metrics{grid-template-columns:minmax(0,1fr)}.metrics li{border-right:0;border-bottom:1px solid var(--line);padding:18px 20px}.metrics li:last-child{border-bottom:0}.metrics-float{margin-top:-56px}}
 
-section.band{padding-block:clamp(60px,8vw,104px)}
-.band-paper{background:var(--paper);border-block:1px solid var(--line)}
+section.band{padding-block:clamp(64px,8vw,108px)}
+.band-panel{background:var(--panel);border-block:1px solid var(--line)}
 .sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px 32px;flex-wrap:wrap;margin-bottom:40px}
-.sec-head h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;margin-top:10px}
-.sec-head p{max-width:54ch}
+.sec-head h2{font-size:clamp(1.7rem,3vw,2.5rem);font-weight:800;margin-top:10px}
+.sec-head p{max-width:54ch;color:var(--muted)}
 .rule{display:block;width:56px;height:4px;background:var(--red);margin-top:16px}
 
-/* Product cards */
-.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:4px;overflow:hidden;min-width:0;transition:box-shadow .2s,border-color .2s}
-.card:hover{box-shadow:var(--shadow);border-color:var(--line-strong)}
-.media{position:relative;overflow:hidden;background:var(--paper-2);max-width:100%}
-.card .media{aspect-ratio:16/9}
-.media .fallback{position:absolute;inset:0;display:flex;align-items:flex-end;padding:14px;font-size:.78rem;font-weight:600;color:var(--muted);background:linear-gradient(135deg,var(--paper-2),var(--line))}
-.media img{position:relative;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
-.card:hover .media img{transform:scale(1.03)}
-.card-body{display:flex;flex-direction:column;gap:14px;padding:24px;flex:1;border-top:4px solid var(--red)}
-.card .tag{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
-.card h3{font-size:1.3rem;font-weight:700}
-.card ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:.95rem}
-.card li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px}
-.card li svg{width:18px;height:18px;color:var(--red);margin-top:3px}
-.card-foot{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.card-foot span{font-size:.86rem;color:var(--muted);font-variant-numeric:tabular-nums}
-.link-arrow{font-weight:700;font-size:.92rem;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
-.link-arrow svg{width:16px;height:16px;color:var(--red);transition:transform .15s}
-.link-arrow:hover{color:var(--red)}
-.link-arrow:hover svg{transform:translateX(3px)}
-@media (max-width:1000px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}.products .card:last-child{grid-column:1/-1}.products .card:last-child .media{aspect-ratio:21/9}}
-@media (max-width:640px){.products{grid-template-columns:minmax(0,1fr)}.products .card:last-child .media{aspect-ratio:16/9}}
+/* Product grid */
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.card{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:4px;overflow:hidden;min-width:0;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--red);transform:translateY(-3px)}
+.media{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--panel-2),var(--line));max-width:100%}
+.card .media{aspect-ratio:16/10}
+.media .fallback{position:absolute;inset:0;display:flex;align-items:flex-end;padding:14px;font-size:.78rem;font-weight:600;color:var(--muted)}
+.media img{position:relative;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.card:hover .media img{transform:scale(1.05)}
+.card-body{display:flex;flex-direction:column;gap:12px;padding:22px;flex:1}
+.card .tag{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red-text)}
+.card h3{font-size:1.15rem;font-weight:700}
+.card p{font-size:.92rem;color:var(--muted)}
+.card ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:.88rem}
+.card li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:8px}
+.card li::before{content:"";width:8px;height:8px;background:var(--red);margin-top:8px}
+.card-foot{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.card-foot span{font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.link-arrow{font-weight:700;font-size:.9rem;color:var(--white);text-decoration:none;border-bottom:2px solid var(--red);padding-bottom:1px}
+.link-arrow:hover{color:var(--red-text)}
+@media (max-width:1180px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.products{grid-template-columns:minmax(0,1fr)}}
+
+/* Plant banner */
+.plant{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--panel);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.plant .media{min-height:340px;height:100%}
+.plant .media img{position:absolute;inset:0}
+.plant-copy{padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:center;gap:16px}
+.plant-copy h2{font-size:clamp(1.6rem,2.8vw,2.3rem);font-weight:800}
+.plant-copy p{color:var(--muted);max-width:50ch}
+.plant-copy ul{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.plant-copy li{border-left:3px solid var(--red);padding-left:12px;font-size:.88rem;color:var(--muted)}
+.plant-copy li b{display:block;font-family:var(--f-display);color:var(--white);font-size:1.3rem;font-variant-numeric:tabular-nums}
+@media (max-width:860px){.plant{grid-template-columns:minmax(0,1fr)}.plant .media{min-height:240px}}
 
 /* Spec matrix */
 .tabs{display:flex;border-bottom:1px solid var(--line-strong);overflow-x:auto}
-.tab{flex:none;background:transparent;border:0;border-bottom:4px solid transparent;margin-bottom:-1px;color:var(--muted);font-family:var(--f-body);font-weight:700;font-size:.97rem;padding:14px 22px;cursor:pointer;min-height:54px}
-.tab:hover{color:var(--ink)}
-.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--red);background:var(--white)}
-.panel{background:var(--white);border:1px solid var(--line);border-top:0;border-radius:0 0 4px 4px}
-.panel-note{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line);font-size:.9rem}
-.panel-note b{color:var(--ink)}
-.panel-note span:last-child{color:var(--muted)}
+.tab{flex:none;background:transparent;border:0;border-bottom:4px solid transparent;margin-bottom:-1px;color:var(--muted);font-family:var(--f-body);font-weight:700;font-size:.95rem;padding:14px 22px;cursor:pointer;min-height:54px}
+.tab:hover{color:var(--white)}
+.tab[aria-selected="true"]{color:var(--white);border-bottom-color:var(--red);background:var(--bg)}
+.panel{background:var(--bg);border:1px solid var(--line);border-top:0;border-radius:0 0 4px 4px}
+.panel-note{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+.panel-note b{color:var(--white)}
 .table-scroll{overflow-x:auto}
-table.spec{width:100%;border-collapse:collapse;min-width:920px;font-size:.93rem;font-variant-numeric:tabular-nums}
+table.spec{width:100%;border-collapse:collapse;min-width:900px;font-size:.93rem;font-variant-numeric:tabular-nums}
 table.spec th,table.spec td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
-table.spec thead th{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--white);background:var(--deep);white-space:nowrap;border-bottom:0}
-table.spec tbody tr:nth-child(even){background:var(--paper)}
-table.spec tbody tr:hover{background:var(--red-tint)}
+table.spec thead th{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--panel-2);white-space:nowrap}
+table.spec tbody tr:hover{background:rgba(220,38,38,.08)}
 table.spec tbody tr:last-child > *{border-bottom:0}
-.num{color:var(--ink);font-weight:600;white-space:nowrap}
-.model{font-family:var(--f-display);font-weight:700;color:var(--ink);white-space:nowrap}
+.num{color:var(--white);font-weight:600;white-space:nowrap}
+.model{font-family:var(--f-display);font-weight:700;color:var(--white);white-space:nowrap}
 .model small{display:block;font-family:var(--f-body);font-weight:500;color:var(--muted);font-size:.78rem;margin-top:2px}
-.dl-btn{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--line-strong);border-radius:3px;color:var(--ink);padding:8px 12px;font:inherit;font-weight:600;font-size:.84rem;cursor:pointer;white-space:nowrap;min-height:40px}
-.dl-btn:hover{border-color:var(--red);color:var(--red)}
+.dl-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--line-strong);border-radius:3px;color:var(--white);padding:8px 12px;font:inherit;font-weight:600;font-size:.84rem;cursor:pointer;white-space:nowrap;min-height:40px}
+.dl-btn:hover{border-color:var(--red);color:var(--red-text)}
 .dl-btn svg{width:16px;height:16px}
 .dl-btn.done{border-color:var(--ok);color:var(--ok)}
 .spec-foot{font-size:.85rem;color:var(--muted);margin-top:16px}
 
-/* Quote: 2-column */
+/* Quote builder */
 .quote{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(32px,5vw,80px);align-items:start}
-.quote-copy h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;margin-top:10px}
-.quote-copy > p{margin-top:20px;max-width:50ch}
-.steps{list-style:none;margin:32px 0 0;padding:0;border-top:1px solid var(--line)}
-.steps li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
-.steps b{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--red);color:var(--white);font-size:.85rem}
-.steps strong{color:var(--ink);display:block}
-.steps span{font-size:.92rem;color:var(--muted)}
-form.fleet{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--red);border-radius:4px;box-shadow:var(--shadow);overflow:hidden}
-.form-body{padding:clamp(20px,3vw,32px);display:grid;gap:22px}
+.quote-copy h2{font-size:clamp(1.7rem,3vw,2.5rem);font-weight:800;margin-top:10px}
+.quote-copy > p{margin-top:20px;max-width:50ch;color:var(--muted)}
+.perks{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--line)}
+.perks li{padding:14px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:20px minmax(0,1fr);gap:12px;font-size:.95rem}
+.perks svg{width:20px;height:20px;color:var(--red-text);margin-top:3px}
+.perks strong{color:var(--white)}
+form.builder{background:var(--panel);border:1px solid var(--line-strong);border-top:4px solid var(--red);border-radius:4px;overflow:hidden}
+.progress{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--line);background:var(--panel-2)}
+.progress div{padding:12px 16px;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1px}
+.progress div b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--line-strong);color:var(--white);margin-right:8px;font-size:.72rem}
+.progress div.on{color:var(--white);border-bottom-color:var(--red)}
+.progress div.on b,.progress div.done b{background:var(--red)}
+.progress div.done{color:var(--text)}
+@media (max-width:520px){.progress div span{display:none}}
+.step{padding:clamp(20px,3vw,32px);display:grid;gap:20px}
+.step[hidden]{display:none}
 fieldset{border:0;padding:0;margin:0;min-width:0}
-legend,.lbl{display:block;font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:8px;padding:0}
-.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.seg input{position:absolute;opacity:0;width:1px;height:1px}
-.seg label{display:flex;flex-direction:column;gap:2px;padding:14px;border:1.5px solid var(--line-strong);border-radius:3px;background:var(--white);cursor:pointer;height:100%;transition:border-color .15s,background .15s}
-.seg label b{font-family:var(--f-display);font-weight:700;color:var(--ink);font-size:1.02rem}
-.seg label span{font-size:.8rem;color:var(--muted)}
-.seg input:checked + label{border-color:var(--red);background:var(--red-tint);box-shadow:inset 0 0 0 1px var(--red)}
-.seg input:focus-visible + label{outline:3px solid var(--ink);outline-offset:2px}
-@media (max-width:520px){.seg{grid-template-columns:minmax(0,1fr)}}
+legend,.lbl{display:block;font-size:.88rem;font-weight:700;color:var(--white);margin-bottom:8px;padding:0}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.opts input{position:absolute;opacity:0;width:1px;height:1px}
+.opts label{display:flex;flex-direction:column;gap:2px;padding:14px;border:1.5px solid var(--line-strong);border-radius:3px;background:var(--bg);cursor:pointer;height:100%;transition:border-color .15s,background .15s}
+.opts label b{font-family:var(--f-display);font-weight:700;color:var(--white);font-size:.98rem}
+.opts label span{font-size:.8rem;color:var(--muted)}
+.opts input:checked + label{border-color:var(--red);background:rgba(220,38,38,.12);box-shadow:inset 0 0 0 1px var(--red)}
+.opts input:focus-visible + label{outline:3px solid var(--white);outline-offset:2px}
+@media (max-width:480px){.opts{grid-template-columns:minmax(0,1fr)}}
 .row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 @media (max-width:560px){.row2{grid-template-columns:minmax(0,1fr)}}
 .field{display:flex;flex-direction:column;min-width:0}
-.field input,.field select{width:100%;min-height:50px;padding:12px 14px;background:var(--white);border:1.5px solid var(--line-strong);border-radius:3px;color:var(--ink);font:inherit;font-size:1rem;font-variant-numeric:tabular-nums;appearance:none}
-.field select{background-image:linear-gradient(45deg,transparent 50%,var(--slate) 50%),linear-gradient(135deg,var(--slate) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
-.field input:focus,.field select:focus{border-color:var(--red);outline:2px solid var(--red);outline-offset:0}
+.field input,.field select{width:100%;min-height:50px;padding:12px 14px;background:var(--bg);border:1.5px solid var(--line-strong);border-radius:3px;color:var(--white);font:inherit;font-size:1rem;appearance:none}
+.field select{background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+.field input:focus,.field select:focus{border-color:var(--red);outline:2px solid var(--red)}
 .field input[aria-invalid="true"]{border-color:var(--red)}
-.field input::placeholder{color:#94A3B8}
-.hint{font-size:.82rem;color:var(--muted);margin-top:6px}
-.err{font-size:.85rem;color:var(--red-hover);margin-top:4px;min-height:1.3em;font-weight:600}
-.form-foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding:20px clamp(20px,3vw,32px);border-top:1px solid var(--line);background:var(--paper)}
-.form-foot small{color:var(--muted);font-size:.82rem;max-width:36ch}
-.estimate{padding:clamp(20px,3vw,32px);background:var(--paper-2);border-top:1px solid var(--line)}
-.estimate h3{font-family:var(--f-body);font-size:.97rem;font-weight:700;margin-top:6px}
-.estimate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 0}
-.estimate-grid div{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:3px;padding:12px 14px}
-.estimate-grid dt{font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.estimate-grid dd{margin:4px 0 0;font-family:var(--f-display);font-weight:800;color:var(--ink);font-size:1.12rem;font-variant-numeric:tabular-nums}
-.estimate p{font-size:.84rem;color:var(--slate);margin-top:14px}
-@media (max-width:640px){.estimate-grid{grid-template-columns:minmax(0,1fr)}}
+.field input::placeholder{color:#64748B}
+.err{font-size:.85rem;color:var(--red-text);margin-top:4px;min-height:1.3em;font-weight:600}
+.actions{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;align-items:center;padding:20px clamp(20px,3vw,32px);border-top:1px solid var(--line);background:var(--panel-2)}
+.actions small{color:var(--muted);font-size:.82rem;max-width:34ch}
+.actions .grp{display:flex;gap:10px;flex-wrap:wrap;margin-left:auto}
+.done-box{padding:clamp(24px,4vw,40px);text-align:left}
+.done-box h3{font-size:1.4rem;margin-top:8px}
+.done-box p{color:var(--muted);margin-top:10px;max-width:46ch}
+.done-box dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0 0}
+.done-box dl div{border-left:3px solid var(--red);padding-left:12px}
+.done-box dt{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.done-box dd{margin:2px 0 0;color:var(--white);font-weight:600}
 @media (max-width:960px){.quote{grid-template-columns:minmax(0,1fr)}}
 
-/* Dealer band */
-.dealer{background:var(--red);color:var(--white)}
-.dealer .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px 56px;align-items:center;padding-block:clamp(44px,6vw,72px)}
-.dealer h2{color:var(--white);font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800}
-.dealer p{color:#FDE2E4;margin-top:12px;max-width:52ch}
+/* Dealer */
+.dealer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;background:linear-gradient(135deg,var(--red) 0%,#991B1B 100%);border-radius:4px;padding:clamp(28px,4vw,56px)}
+.dealer h2{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800}
+.dealer p{margin-top:12px;color:#FEE2E2;max-width:48ch}
 .dealer form{display:flex;gap:10px;flex-wrap:wrap}
 .dealer label{flex-basis:100%;font-weight:700;font-size:.88rem;color:var(--white)}
-.dealer input{flex:1 1 160px;min-width:0;min-height:50px;padding:12px 14px;border:2px solid var(--white);border-radius:3px;font:inherit;font-size:1rem;font-variant-numeric:tabular-nums;color:var(--ink);background:var(--white)}
-.dealer .btn-dark{background:var(--ink);color:var(--white)}
-.dealer .btn-dark:hover{background:#000}
-@media (max-width:860px){.dealer .wrap{grid-template-columns:minmax(0,1fr)}}
+.dealer input{flex:1 1 150px;min-width:0;min-height:50px;padding:12px 14px;border:2px solid var(--white);border-radius:3px;font:inherit;font-size:1rem;color:#0F172A;background:var(--white)}
+.dealer .btn-dark{background:var(--bg)}
+.dealer-result{flex-basis:100%;font-size:.9rem;color:var(--white);min-height:1.4em}
+@media (max-width:860px){.dealer{grid-template-columns:minmax(0,1fr)}}
 
 /* Footer */
-footer.site{background:var(--ink);color:#CBD5E1}
+footer.site{background:#05080F;border-top:1px solid var(--line);margin-top:clamp(64px,8vw,108px)}
 .foot-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:40px;padding-block:56px}
-.foot-grid h3{font-family:var(--f-body);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94A3B8;margin-bottom:14px}
+.foot-grid h3{font-family:var(--f-body);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
 .foot-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.foot-grid a{text-decoration:none;color:#E2E8F0;font-size:.94rem}
+.foot-grid a{text-decoration:none;color:var(--text);font-size:.94rem}
 .foot-grid a:hover{color:var(--white);text-decoration:underline}
-footer :focus-visible{outline-color:var(--white)}
 .support-line{font-family:var(--f-display);font-weight:800;font-size:1.6rem;color:var(--white);font-variant-numeric:tabular-nums;user-select:all}
-.support-meta{color:#94A3B8;font-size:.88rem;margin-top:6px}
-.compliance{border-top:1px solid #334155;padding-block:24px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
-.compliance p{font-size:.84rem;max-width:110ch;color:#CBD5E1}
+.support-meta{color:var(--muted);font-size:.88rem;margin-top:6px}
+.compliance{border-top:1px solid var(--line);padding-block:24px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+.compliance p{font-size:.84rem;max-width:110ch;color:var(--muted)}
 .compliance strong{color:var(--white)}
 .badges{display:flex;gap:8px;flex-wrap:wrap}
-.badges span{font-size:.72rem;font-weight:700;letter-spacing:.06em;border:1px solid #475569;border-radius:3px;padding:6px 10px;color:var(--white);white-space:nowrap}
-.legal{border-top:1px solid #334155;padding-block:18px;font-size:.8rem;color:#94A3B8;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.badges span{font-size:.72rem;font-weight:700;letter-spacing:.06em;border:1px solid var(--line-strong);border-radius:3px;padding:6px 10px;color:var(--white);white-space:nowrap}
+.badges .ntea-badge{background:var(--red);border-color:var(--red)}
+.legal{border-top:1px solid var(--line);padding-block:18px;font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:960px){.foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.compliance{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:520px){.foot-grid{grid-template-columns:minmax(0,1fr)}}
 
-.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,160%);background:var(--ink);color:var(--white);padding:14px 18px;font-weight:500;font-size:.9rem;border-left:5px solid var(--red);border-radius:3px;box-shadow:0 10px 30px rgba(15,23,42,.3);z-index:80;transition:transform .25s;max-width:calc(100% - 32px)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,160%);background:var(--white);color:var(--bg);padding:14px 18px;font-weight:600;font-size:.9rem;border-left:5px solid var(--red);border-radius:3px;box-shadow:0 10px 30px rgba(0,0,0,.5);z-index:80;transition:transform .25s;max-width:calc(100% - 32px)}
 .toast.show{transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .fade{opacity:1;transform:none}
+}
 </style>
 
 <a class="skip" href="#main">Skip to content</a>
@@ -295,9 +291,7 @@ footer :focus-visible{outline-color:var(--white)}
 <header class="site">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Apex Truck Bodies home">
-      <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.8"><path d="M3 20 12 4l9 16"/><path d="M7.5 14h9"/></svg>
-      </span>
+      <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.8"><path d="M3 20 12 4l9 16"/><path d="M7.5 14h9"/></svg></span>
       <span class="logo-text">APEX TRUCK BODIES<small>COMMERCIAL TRUCK BODIES</small></span>
     </a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="primaryNav" aria-label="Menu">
@@ -307,7 +301,8 @@ footer :focus-visible{outline-color:var(--white)}
       <ul>
         <li><a href="#products">Truck Bodies</a></li>
         <li><a href="#specs">Specifications</a></li>
-        <li><a href="#quote">Fleet Solutions</a></li>
+        <li><a href="#quote">Quote Builder</a></li>
+        <li><a href="#dealers">Dealers</a></li>
         <li><a href="#about">About Us</a></li>
         <li class="nav-cta"><a class="btn btn-red" href="#quote">Request a Quote</a></li>
       </ul>
@@ -318,280 +313,287 @@ footer :focus-visible{outline-color:var(--white)}
 
 <main id="main">
   <section class="hero" id="top" aria-labelledby="hero-h">
-    <div class="hero-bg" aria-hidden="true">
-      <!-- Add <source src="your-loop.mp4" type="video/mp4"> inside the video to play real footage -->
-      <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200"></video>
+    <div class="hero-photo" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2000&q=85" alt="" width="2000" height="1200" fetchpriority="high" onerror="this.remove()">
     </div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-glow g1" aria-hidden="true"></div>
+    <div class="hero-glow g2" aria-hidden="true"></div>
     <div class="wrap">
       <div class="hero-copy">
-        <div class="badge-row">
-          <span class="chip red">2026 Model Year</span>
-          <span class="chip">Class 3–5 Chassis</span>
-          <span class="chip">Built in USA</span>
-        </div>
-        <h1 id="hero-h">Heavy-Duty Truck Bodies Built for Quality, Reliability &amp; Heavy Payload</h1>
-        <p class="lede">Dump, dovetail and flatbed bodies made from 10-gauge steel and structural channel for fleet managers, municipal buyers and commercial upfitters. Every body ships with published weights and CAD files.</p>
-        <div class="ctas">
-          <a class="btn btn-white" href="#products">Explore Body Lines</a>
-          <a class="btn btn-red" href="#quote">
-            Get Fleet Quote
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+        <span class="status fade"><i aria-hidden="true"></i>Now quoting 2026 model year builds</span>
+        <h1 id="hero-h" class="fade d1">Truck bodies built for <em>heavy payload</em> and zero downtime</h1>
+        <p class="lede fade d2">Dry freight, refrigerated, service and dump bodies, welded in our Ohio plant and shipped chassis-ready. Published weights and CAD files come with every build.</p>
+        <div class="ctas fade d3">
+          <a class="btn btn-red" href="#quote">Build Your Quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="#products">Explore Body Lines</a>
         </div>
       </div>
-      <article class="feature" aria-label="Featured build">
-        <div class="feature-media">
-          <span class="fallback" aria-hidden="true">Apex DB-1400 dump body on Ford F-550</span>
-          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200" alt="Apex Commercial Upfit Truck" width="1200" height="320" fetchpriority="high" onerror="this.remove()">
-          <p class="spec-badge"><span>Class 3–5 chassis compatible</span><span>10-gauge steel construction</span></p>
-        </div>
-        <div class="feature-body">
-          <span class="tag">Featured build · DB-1400</span>
-          <h2>12 ft Commercial Dump Body</h2>
-          <dl>
-            <div><dt>GVWR</dt><dd>19,500 lb</dd></div>
-            <div><dt>Capacity</dt><dd>4.0 yd³</dd></div>
-            <div><dt>Hoist</dt><dd>10 ton</dd></div>
-          </dl>
-        </div>
-      </article>
     </div>
   </section>
 
-  <div class="stats">
-    <div class="wrap">
-      <ul>
-        <li><b>38,000+</b><span>Bodies in active fleet service</span></li>
-        <li><b>14-Day</b><span>Lead time on stock lengths</span></li>
-        <li><b>212</b><span>Certified upfitters and dealers</span></li>
-        <li><b>5-Yr</b><span>Structural warranty, transferable</span></li>
-      </ul>
-    </div>
+  <div class="wrap metrics-float">
+    <ul class="metrics fade d4" aria-label="Apex by the numbers">
+      <li><b>10-Yr</b><span>Structural warranty</span></li>
+      <li><b>15,000+</b><span>Bodies shipped</span></li>
+      <li><b>48-Hr</b><span>Rapid parts dispatch</span></li>
+    </ul>
   </div>
 
   <section class="band" id="products" aria-labelledby="prod-h">
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <p class="eyebrow">Our Products</p>
-          <h2 id="prod-h">Truck Body Lines</h2>
+          <p class="eyebrow">Product Catalog</p>
+          <h2 id="prod-h">Body Lines for Every Chassis</h2>
           <span class="rule" aria-hidden="true"></span>
         </div>
-        <p>Three lines on one build standard: the same welded understructure, LED lighting and parts catalog across every body.</p>
+        <p>Four lines on one build standard: the same welded understructure, LED lighting and parts catalog across every body.</p>
       </div>
       <div class="products">
         <article class="card">
-          <div class="media">
-            <span class="fallback" aria-hidden="true">Landscape &amp; Dovetail Bodies</span>
-            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=800" alt="Landscape dovetail body with equipment loaded" width="800" height="450" loading="lazy" onerror="this.remove()">
-          </div>
+          <div class="media"><span class="fallback" aria-hidden="true">Dry Freight Box Body</span>
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Dry freight box truck body" width="800" height="500" loading="lazy" onerror="this.remove()"></div>
           <div class="card-body">
-            <span class="tag">LD Series</span>
-            <h3>Landscape &amp; Dovetail Bodies</h3>
-            <ul>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Fold-down ramps rated 5,000 lb per pair</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Removable 24" mesh or steel sides</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Built-in trimmer and blower racks</li>
-            </ul>
-            <div class="card-foot"><span>12–16 ft decks</span><a class="link-arrow" href="#specs" data-tab="tab-ld">View specs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+            <span class="tag">DF Series</span>
+            <h3>Dry Freight Box Body</h3>
+            <p>Smooth-sided cargo bodies for parcel, retail and last-mile fleets.</p>
+            <ul><li>12–26 ft body lengths</li><li>Aluminum or FRP wall options</li><li>Roll-up or swing-door configurations</li></ul>
+            <div class="card-foot"><span>Up to 10,500 lb payload</span><a class="link-arrow" href="#specs" data-tab="tab-df">View specs</a></div>
           </div>
         </article>
         <article class="card">
-          <div class="media">
-            <span class="fallback" aria-hidden="true">Commercial Dump Bodies</span>
-            <img src="https://images.unsplash.com/photo-1508873696983-2df515122519?q=80&w=800" alt="Commercial dump body with hoist" width="800" height="450" loading="lazy" onerror="this.remove()">
+          <div class="media"><span class="fallback" aria-hidden="true">Refrigerated (Reefer)</span>
+            <img src="https://images.unsplash.com/photo-1591768793355-74d04bb6608f?auto=format&fit=crop&w=800&q=80" alt="Refrigerated truck body" width="800" height="500" loading="lazy" onerror="this.remove()"></div>
+          <div class="card-body">
+            <span class="tag">RF Series</span>
+            <h3>Refrigerated (Reefer)</h3>
+            <p>Insulated bodies for fresh and frozen loads, with reefer unit prep.</p>
+            <ul><li>2.5" foam-core insulated walls</li><li>Fits Class 4–6 chassis</li><li>Sealed side and rear door options</li></ul>
+            <div class="card-foot"><span>Up to 8,800 lb payload</span><a class="link-arrow" href="#specs" data-tab="tab-rf">View specs</a></div>
           </div>
+        </article>
+        <article class="card">
+          <div class="media"><span class="fallback" aria-hidden="true">Service &amp; Utility Body</span>
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Service and utility truck body with compartments" width="800" height="500" loading="lazy" onerror="this.remove()"></div>
+          <div class="card-body">
+            <span class="tag">SU Series</span>
+            <h3>Service &amp; Utility Body</h3>
+            <p>Compartmented bodies for trades, utilities and mobile service crews.</p>
+            <ul><li>8–11 ft bodies, 6–10 compartments</li><li>Galvanneal steel or aluminum</li><li>Crane and ladder rack ready</li></ul>
+            <div class="card-foot"><span>Up to 7,200 lb payload</span><a class="link-arrow" href="#specs" data-tab="tab-su">View specs</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media"><span class="fallback" aria-hidden="true">Heavy-Duty Dump Body</span>
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Heavy-duty dump body at a job site" width="800" height="500" loading="lazy" onerror="this.remove()"></div>
           <div class="card-body">
             <span class="tag">DB Series</span>
-            <h3>Commercial Dump Bodies</h3>
-            <ul>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Fits Class 3–5 chassis, 60" and 84" CA</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Electric/hydraulic or double-acting hoists</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>3-way tailgate, spreader-ready</li>
-            </ul>
-            <div class="card-foot"><span>9–12 ft · 2–4 yd³</span><a class="link-arrow" href="#specs" data-tab="tab-db">View specs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="media">
-            <span class="fallback" aria-hidden="true">Heavy-Duty Flatbeds</span>
-            <img src="https://images.unsplash.com/photo-1586191582056-a141b714bf39?q=80&w=800" alt="Heavy-duty flatbed with stake pockets and rub rails" width="800" height="450" loading="lazy" onerror="this.remove()">
-          </div>
-          <div class="card-body">
-            <span class="tag">FB Series</span>
-            <h3>Heavy-Duty Flatbeds</h3>
-            <ul>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Stake pockets on 24" centers</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Formed rub rails, recessed tie-downs</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Gooseneck subframe, 30,000 lb rated</li>
-            </ul>
-            <div class="card-foot"><span>9–16 ft decks</span><a class="link-arrow" href="#specs" data-tab="tab-fb">View specs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+            <h3>Heavy-Duty Dump Body</h3>
+            <p>Hoist-equipped dump bodies for municipal and contractor work.</p>
+            <ul><li>9–14 ft, 2–6 yd³ capacity</li><li>10-gauge steel sides, AR450 floor option</li><li>3-way tailgate, spreader-ready</li></ul>
+            <div class="card-foot"><span>Up to 12,000 lb payload</span><a class="link-arrow" href="#specs" data-tab="tab-db">View specs</a></div>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="band band-paper" id="specs" aria-labelledby="spec-h">
+  <section class="band band-panel" id="about" aria-labelledby="plant-h">
+    <div class="wrap">
+      <div class="plant">
+        <div class="media"><span class="fallback" aria-hidden="true">Apex plant floor, Ohio</span>
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Technician working on heavy equipment in a fabrication plant" width="800" height="600" loading="lazy" onerror="this.remove()"></div>
+        <div class="plant-copy">
+          <p class="eyebrow">Plant Spotlight</p>
+          <h2 id="plant-h">Welded, Tested and Shipped from One Floor in Ohio</h2>
+          <p>Every frame is jig-welded by certified welders, load-tested and inspected before it leaves. The people who build your body are the same people who answer your parts call.</p>
+          <ul>
+            <li><b>38</b>certified welders on staff</li>
+            <li><b>1,200+</b>bodies built each year</li>
+            <li><b>100%</b>of frames load-tested</li>
+            <li><b>AWS D1.1</b>structural welding standard</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="specs" aria-labelledby="spec-h">
     <div class="wrap">
       <div class="sec-head">
         <div>
           <p class="eyebrow">Specifications</p>
-          <h2 id="spec-h">Technical Specification Matrix</h2>
+          <h2 id="spec-h">Spec Comparison Matrix</h2>
           <span class="rule" aria-hidden="true"></span>
         </div>
-        <p>Compare GVWR, deck length, chassis compatibility and hoist specs. Each PDF includes body weight, center of gravity and mounting details.</p>
+        <p>Compare payload, body length, wall construction and door configuration. Each PDF adds weights, center of gravity and mounting details.</p>
       </div>
 
-      <div class="tabs" role="tablist" aria-label="Product line">
-        <button class="tab" role="tab" id="tab-db" aria-controls="panel-db" aria-selected="true">Commercial Dump Bodies</button>
-        <button class="tab" role="tab" id="tab-ld" aria-controls="panel-ld" aria-selected="false" tabindex="-1">Landscape &amp; Dovetail</button>
-        <button class="tab" role="tab" id="tab-fb" aria-controls="panel-fb" aria-selected="false" tabindex="-1">Heavy-Duty Flatbeds</button>
+      <div class="tabs" role="tablist" aria-label="Body line">
+        <button class="tab" role="tab" id="tab-df" aria-controls="panel-df" aria-selected="true">Dry Freight</button>
+        <button class="tab" role="tab" id="tab-rf" aria-controls="panel-rf" aria-selected="false" tabindex="-1">Refrigerated</button>
+        <button class="tab" role="tab" id="tab-su" aria-controls="panel-su" aria-selected="false" tabindex="-1">Service &amp; Utility</button>
+        <button class="tab" role="tab" id="tab-db" aria-controls="panel-db" aria-selected="false" tabindex="-1">Heavy-Duty Dump</button>
       </div>
 
-      <div class="panel" role="tabpanel" id="panel-db" aria-labelledby="tab-db" tabindex="0">
-        <div class="panel-note"><span><b>DB Series</b> · 10-gauge steel sides, 3-way tailgate standard</span><span>4 models</span></div>
-        <div class="table-scroll">
-          <table class="spec">
-            <thead><tr><th scope="col">Model</th><th scope="col">GVWR</th><th scope="col">Deck Length</th><th scope="col">Chassis Compatibility</th><th scope="col">Hoist Specs</th><th scope="col"><span class="sr">Spec sheet</span></th></tr></thead>
-            <tbody>
-              <tr><th scope="row" class="model">DB-900<small>2 yd³ struck</small></th><td class="num">12,500 lb</td><td class="num">9 ft</td><td>Class 3 · Ford F-350, RAM 3500, Silverado 3500HD</td><td class="num">5 ton · electric/hydraulic</td><td><button class="dl-btn" data-pdf="DB-900"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
-              <tr><th scope="row" class="model">DB-1000<small>3 yd³ struck</small></th><td class="num">14,500 lb</td><td class="num">10 ft</td><td>Class 4 · Ford F-450, RAM 4500, Silverado 4500HD</td><td class="num">7 ton · scissor</td><td><button class="dl-btn" data-pdf="DB-1000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
-              <tr><th scope="row" class="model">DB-1200<small>3.5 yd³ struck</small></th><td class="num">17,950 lb</td><td class="num">11 ft</td><td>Class 4–5 · Ford F-450/F-550, RAM 4500/5500</td><td class="num">8 ton · double-acting</td><td><button class="dl-btn" data-pdf="DB-1200"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
-              <tr><th scope="row" class="model">DB-1400<small>4 yd³ struck</small></th><td class="num">19,500 lb</td><td class="num">12 ft</td><td>Class 5 · Ford F-550, RAM 5500, Silverado 5500HD</td><td class="num">10 ton · double-acting</td><td><button class="dl-btn" data-pdf="DB-1400"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="panel" role="tabpanel" id="panel-df" aria-labelledby="tab-df" tabindex="0">
+        <div class="panel-note"><span><b>DF Series</b> · bonded floor, LED lighting, interior E-track standard</span><span>4 models</span></div>
+        <div class="table-scroll"><table class="spec">
+          <thead><tr><th scope="col">Model</th><th scope="col">Payload</th><th scope="col">Body Length</th><th scope="col">Wall Construction</th><th scope="col">Door Configuration</th><th scope="col"><span class="sr">Spec sheet</span></th></tr></thead>
+          <tbody>
+            <tr><th scope="row" class="model">DF-14<small>Class 4</small></th><td class="num">5,800 lb</td><td class="num">14 ft</td><td>.040" aluminum or FRP</td><td>Rear roll-up</td><td><button class="dl-btn" data-pdf="DF-14"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
+            <tr><th scope="row" class="model">DF-16<small>Class 4–5</small></th><td class="num">7,200 lb</td><td class="num">16 ft</td><td>.040" aluminum or FRP</td><td>Rear roll-up, optional side door</td><td><button class="dl-btn" data-pdf="DF-16"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
+            <tr><th scope="row" class="model">DF-20<small>Class 5–6</small></th><td class="num">8,900 lb</td><td class="num">20 ft</td><td>FRP over aluminum frame</td><td>Rear swing or roll-up, side door</td><td><button class="dl-btn" data-pdf="DF-20"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
+            <tr><th scope="row" class="model">DF-26<small>Class 6</small></th><td class="num">10,500 lb</td><td class="num">26 ft</td><td>FRP over steel-reinforced frame</td><td>Rear roll-up, dual side doors, liftgate prep</td><td><button class="dl-btn" data-pdf="DF-26"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
+          </tbody></table></div>
       </div>
 
-      <div class="panel" role="tabpanel" id="panel-ld" aria-labelledby="tab-ld" tabindex="0" hidden>
-        <div class="panel-note"><span><b>LD Series</b> · 18° dovetail, flush-stow ramps, LED work lights standard</span><span>3 models</span></div>
-        <div class="table-scroll">
-          <table class="spec">
-            <thead><tr><th scope="col">Model</th><th scope="col">GVWR</th><th scope="col">Deck Length</th><th scope="col">Chassis Compatibility</th><th scope="col">Hoist Specs</th><th scope="col"><span class="sr">Spec sheet</span></th></tr></thead>
-            <tbody>
-              <tr><th scope="row" class="model">LD-12<small>36" dovetail</small></th><td class="num">12,500 lb</td><td class="num">12 ft</td><td>Class 3 · Ford F-350, RAM 3500, Silverado 3500HD</td><td class="num">Optional 4 ton</td><td><button class="dl-btn" data-pdf="LD-12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
-              <tr><th scope="row" class="model">LD-14<small>48" dovetail</small></th><td class="num">16,000 lb</td><td class="num">14 ft</td><td>Class 4 · Ford F-450, RAM 4500, Silverado 4500HD</td><td class="num">Optional 6 ton</td><td><button class="dl-btn" data-pdf="LD-14"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
-              <tr><th scope="row" class="model">LD-16<small>48" dovetail</small></th><td class="num">19,500 lb</td><td class="num">16 ft</td><td>Class 5 · Ford F-550, RAM 5500, Silverado 5500HD</td><td class="num">Optional 8 ton</td><td><button class="dl-btn" data-pdf="LD-16"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="panel" role="tabpanel" id="panel-rf" aria-labelledby="tab-rf" tabindex="0" hidden>
+        <div class="panel-note"><span><b>RF Series</b> · 2.5" foam-core walls, reefer unit prep, sealed doors</span><span>3 models</span></div>
+        <div class="table-scroll"><table class="spec">
+          <thead><tr><th scope="col">Model</th><th scope="col">Payload</th><th scope="col">Body Length</th><th scope="col">Wall Construction</th><th scope="col">Door Configuration</th><th scope="col"><span class="sr">Spec sheet</span></th></tr></thead>
+          <tbody>
+            <tr><th scope="row" class="model">RF-14<small>Class 4</small></th><td class="num">4,900 lb</td><td class="num">14 ft</td><td>2.5" foam core, FRP skins</td><td>Rear swing, sealed</td><td><button class="dl-btn" data-pdf="RF-14"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
+            <tr><th scope="row" class="model">RF-18<small>Class 5</small></th><td class="num">6,700 lb</td><td class="num">18 ft</td><td>2.5" foam core, FRP skins</td><td>Rear swing, optional curbside</td><td><button class="dl-btn" data-pdf="RF-18"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
+            <tr><th scope="row" class="model">RF-24<small>Class 6</small></th><td class="num">8,800 lb</td><td class="num">24 ft</td><td>3" foam core, steel-reinforced</td><td>Rear swing, curbside and roadside</td><td><button class="dl-btn" data-pdf="RF-24"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
+          </tbody></table></div>
       </div>
 
-      <div class="panel" role="tabpanel" id="panel-fb" aria-labelledby="tab-fb" tabindex="0" hidden>
-        <div class="panel-note"><span><b>FB Series</b> · 10-gauge deck, stake pockets on 24" centers, headache rack standard</span><span>4 models</span></div>
-        <div class="table-scroll">
-          <table class="spec">
-            <thead><tr><th scope="col">Model</th><th scope="col">GVWR</th><th scope="col">Deck Length</th><th scope="col">Chassis Compatibility</th><th scope="col">Hoist Specs</th><th scope="col"><span class="sr">Spec sheet</span></th></tr></thead>
-            <tbody>
-              <tr><th scope="row" class="model">FB-9<small>Single rear wheel</small></th><td class="num">11,500 lb</td><td class="num">9 ft</td><td>Class 3 · Ford F-350, RAM 3500, Silverado 3500HD</td><td class="num">None</td><td><button class="dl-btn" data-pdf="FB-9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
-              <tr><th scope="row" class="model">FB-12<small>Gooseneck ready</small></th><td class="num">14,500 lb</td><td class="num">12 ft</td><td>Class 4 · Ford F-450, RAM 4500, Silverado 4500HD</td><td class="num">None</td><td><button class="dl-btn" data-pdf="FB-12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
-              <tr><th scope="row" class="model">FB-14H<small>Hydraulic tilt</small></th><td class="num">19,500 lb</td><td class="num">14 ft</td><td>Class 5 · Ford F-550, RAM 5500, Silverado 5500HD</td><td class="num">8 ton · tilt</td><td><button class="dl-btn" data-pdf="FB-14H"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
-              <tr><th scope="row" class="model">FB-16<small>Contractor</small></th><td class="num">19,500 lb</td><td class="num">16 ft</td><td>Class 5 · Ford F-550, RAM 5500, Silverado 5500HD</td><td class="num">None</td><td><button class="dl-btn" data-pdf="FB-16"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="panel" role="tabpanel" id="panel-su" aria-labelledby="tab-su" tabindex="0" hidden>
+        <div class="panel-note"><span><b>SU Series</b> · compartment seals, LED work lights, adjustable shelving</span><span>3 models</span></div>
+        <div class="table-scroll"><table class="spec">
+          <thead><tr><th scope="col">Model</th><th scope="col">Payload</th><th scope="col">Body Length</th><th scope="col">Wall Construction</th><th scope="col">Door Configuration</th><th scope="col"><span class="sr">Spec sheet</span></th></tr></thead>
+          <tbody>
+            <tr><th scope="row" class="model">SU-8<small>Class 3–4</small></th><td class="num">4,200 lb</td><td class="num">8 ft</td><td>14-gauge galvanneal steel</td><td>6 compartments, T-handle latches</td><td><button class="dl-btn" data-pdf="SU-8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
+            <tr><th scope="row" class="model">SU-9<small>Class 4–5</small></th><td class="num">5,600 lb</td><td class="num">9 ft</td><td>12-gauge steel or .125" aluminum</td><td>8 compartments, paddle latches</td><td><button class="dl-btn" data-pdf="SU-9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
+            <tr><th scope="row" class="model">SU-11<small>Class 5</small></th><td class="num">7,200 lb</td><td class="num">11 ft</td><td>12-gauge steel or .125" aluminum</td><td>10 compartments, crane-ready</td><td><button class="dl-btn" data-pdf="SU-11"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
+          </tbody></table></div>
       </div>
-      <p class="spec-foot">Ratings assume level loading on a chassis rated at or above the listed GVWR. A body never raises the chassis rating.</p>
+
+      <div class="panel" role="tabpanel" id="panel-db" aria-labelledby="tab-db" tabindex="0" hidden>
+        <div class="panel-note"><span><b>DB Series</b> · 10-gauge sides, 3-way tailgate, hoist included</span><span>4 models</span></div>
+        <div class="table-scroll"><table class="spec">
+          <thead><tr><th scope="col">Model</th><th scope="col">Payload</th><th scope="col">Body Length</th><th scope="col">Wall Construction</th><th scope="col">Door Configuration</th><th scope="col"><span class="sr">Spec sheet</span></th></tr></thead>
+          <tbody>
+            <tr><th scope="row" class="model">DB-9<small>Class 3</small></th><td class="num">5,500 lb</td><td class="num">9 ft</td><td>10-gauge steel sides and floor</td><td>3-way tailgate</td><td><button class="dl-btn" data-pdf="DB-9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
+            <tr><th scope="row" class="model">DB-10<small>Class 4</small></th><td class="num">7,000 lb</td><td class="num">10 ft</td><td>10-gauge sides, 7-gauge floor</td><td>3-way tailgate</td><td><button class="dl-btn" data-pdf="DB-10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
+            <tr><th scope="row" class="model">DB-12<small>Class 5</small></th><td class="num">9,500 lb</td><td class="num">12 ft</td><td>10-gauge sides, AR450 floor</td><td>3-way tailgate, spreader gate</td><td><button class="dl-btn" data-pdf="DB-12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
+            <tr><th scope="row" class="model">DB-14<small>Class 6</small></th><td class="num">12,000 lb</td><td class="num">14 ft</td><td>10-gauge sides, AR450 floor, 6" channel</td><td>3-way tailgate, spreader gate</td><td><button class="dl-btn" data-pdf="DB-14"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg><span>Download PDF Specs</span></button></td></tr>
+          </tbody></table></div>
+      </div>
+      <p class="spec-foot">Payload is the maximum body capacity on a chassis rated for it. A body never raises the chassis GVWR.</p>
     </div>
   </section>
 
-  <section class="band" id="quote" aria-labelledby="quote-h">
+  <section class="band band-panel" id="quote" aria-labelledby="quote-h">
     <div class="wrap quote">
       <div class="quote-copy">
-        <p class="eyebrow">Fleet Solutions</p>
-        <h2 id="quote-h">Request a Fleet Estimate</h2>
+        <p class="eyebrow">Quote Builder</p>
+        <h2 id="quote-h">Build Your Quote in Three Steps</h2>
         <span class="rule" aria-hidden="true"></span>
-        <p>Pick your fleet size, body type and chassis. You'll see a budgetary range right away, and a fleet engineer follows up with a formal quote within one business day.</p>
-        <ol class="steps">
-          <li><b>1</b><div><strong>Instant estimate</strong><span>Price range and lead time on screen</span></div></li>
-          <li><b>2</b><div><strong>Engineering review</strong><span>We check chassis fit, CA dimension and axle loads</span></div></li>
-          <li><b>3</b><div><strong>Formal quote and PO</strong><span>Municipal buyers get contract pricing where eligible</span></div></li>
-        </ol>
+        <p>Choose a body, add your chassis and floor length, then tell us who to send it to. A fleet engineer replies within one business day.</p>
+        <ul class="perks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><div><strong>Chassis fit check.</strong> We verify CA dimension, axle loads and wiring before you order.</div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><div><strong>Fleet pricing.</strong> Volume and municipal contract pricing applied where eligible.</div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><div><strong>No account needed.</strong> No credit check, no obligation.</div></li>
+        </ul>
       </div>
 
-      <form class="fleet" id="fleetForm" novalidate>
-        <div class="form-body">
+      <form class="builder" id="builder" novalidate>
+        <div class="progress" aria-hidden="true">
+          <div class="on" data-p="1"><b>1</b><span>Body &amp; chassis</span></div>
+          <div data-p="2"><b>2</b><span>Floor length</span></div>
+          <div data-p="3"><b>3</b><span>Contact</span></div>
+        </div>
+
+        <div class="step" data-step="1">
           <fieldset>
-            <legend>How many units?</legend>
-            <div class="seg">
-              <input type="radio" name="units" id="u1" value="small" checked><label for="u1"><b>1–5 units</b><span>Contractor or owner-operator</span></label>
-              <input type="radio" name="units" id="u2" value="mid"><label for="u2"><b>6–20 units</b><span>Regional fleet</span></label>
-              <input type="radio" name="units" id="u3" value="ent"><label for="u3"><b>20+ units</b><span>Municipal or enterprise</span></label>
+            <legend>Body type</legend>
+            <div class="opts">
+              <input type="radio" name="body" id="b1" value="Dry Freight Box Body" checked><label for="b1"><b>Dry Freight</b><span>Box body, 12–26 ft</span></label>
+              <input type="radio" name="body" id="b2" value="Refrigerated (Reefer)"><label for="b2"><b>Refrigerated</b><span>Insulated, reefer-ready</span></label>
+              <input type="radio" name="body" id="b3" value="Service & Utility Body"><label for="b3"><b>Service &amp; Utility</b><span>Compartmented, 8–11 ft</span></label>
+              <input type="radio" name="body" id="b4" value="Heavy-Duty Dump Body"><label for="b4"><b>Heavy-Duty Dump</b><span>Hoist, 9–14 ft</span></label>
             </div>
           </fieldset>
+          <div class="field">
+            <label class="lbl" for="make">Chassis make</label>
+            <select id="make" name="make">
+              <option>Ford</option><option>RAM</option><option>Chevrolet</option><option>GMC</option><option>Isuzu</option><option>Freightliner</option><option>Hino</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="step" data-step="2" hidden>
           <div class="row2">
             <div class="field">
-              <label class="lbl" for="bodyType">Body type</label>
-              <select id="bodyType" name="bodyType">
-                <option value="db">Commercial Dump Body</option>
-                <option value="ld">Landscape &amp; Dovetail Body</option>
-                <option value="fb">Heavy-Duty Flatbed</option>
+              <label class="lbl" for="floor">Floor length</label>
+              <select id="floor" name="floor">
+                <option>9 ft</option><option>10 ft</option><option>12 ft</option><option selected>14 ft</option><option>16 ft</option><option>18 ft</option><option>20 ft</option><option>24 ft</option><option>26 ft</option>
               </select>
             </div>
             <div class="field">
-              <label class="lbl" for="deckLen">Deck length</label>
-              <select id="deckLen" name="deckLen">
-                <option value="9">9 ft</option><option value="10">10 ft</option><option value="12" selected>12 ft</option><option value="14">14 ft</option><option value="16">16 ft</option>
-              </select>
+              <label class="lbl" for="qty">Number of units</label>
+              <input id="qty" name="qty" type="number" inputmode="numeric" min="1" max="500" value="1">
             </div>
           </div>
           <div class="field">
-            <label class="lbl" for="chassis">Chassis model</label>
-            <input id="chassis" name="chassis" list="chassisList" value="Ford F-550" autocomplete="off" aria-describedby="chassisHint chassisErr">
-            <datalist id="chassisList">
-              <option value="Ford F-350"></option><option value="Ford F-450"></option><option value="Ford F-550"></option>
-              <option value="RAM 3500"></option><option value="RAM 4500"></option><option value="RAM 5500"></option>
-              <option value="Chevy Silverado 3500HD"></option><option value="Chevy Silverado 4500HD"></option><option value="Chevy Silverado 5500HD"></option>
-            </datalist>
-            <span class="hint" id="chassisHint">Ford F-350 to F-550, RAM 3500 to 5500, Chevy Silverado 3500HD and up</span>
-            <span class="err" id="chassisErr" aria-live="polite"></span>
+            <label class="lbl" for="chassisModel">Chassis model and year</label>
+            <input id="chassisModel" name="chassisModel" placeholder="Example: F-550, 2026" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="step" data-step="3" hidden>
+          <div class="row2">
+            <div class="field"><label class="lbl" for="name">Full name</label><input id="name" name="name" autocomplete="name" aria-describedby="nameErr"><span class="err" id="nameErr" aria-live="polite"></span></div>
+            <div class="field"><label class="lbl" for="company">Company or agency</label><input id="company" name="company" autocomplete="organization"></div>
           </div>
           <div class="row2">
-            <div class="field">
-              <label class="lbl" for="qty">Exact unit count</label>
-              <input id="qty" name="qty" type="number" inputmode="numeric" min="1" max="500" value="4">
-            </div>
-            <div class="field">
-              <label class="lbl" for="zip">Delivery ZIP code</label>
-              <input id="zip" name="zip" inputmode="numeric" maxlength="5" placeholder="43215" autocomplete="postal-code">
-            </div>
+            <div class="field"><label class="lbl" for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" aria-describedby="emailErr"><span class="err" id="emailErr" aria-live="polite"></span></div>
+            <div class="field"><label class="lbl" for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 555-0142"></div>
           </div>
         </div>
-        <div class="form-foot">
-          <small>No account needed. Estimates exclude chassis, freight and local taxes.</small>
-          <button class="btn btn-red" type="submit">Get Instant Fleet Estimate</button>
+
+        <div class="done-box" id="done" hidden aria-live="polite">
+          <p class="eyebrow">Request received</p>
+          <h3 id="doneTitle">Thanks. Your quote is in the queue.</h3>
+          <p>A fleet engineer will review your chassis and reply within one business day. This preview doesn't send data anywhere.</p>
+          <dl id="doneList"></dl>
         </div>
-        <div class="estimate" id="estimate" aria-live="polite" hidden>
-          <p class="eyebrow">Your budgetary estimate</p>
-          <h3 id="estTitle"></h3>
-          <dl class="estimate-grid">
-            <div><dt>Per unit, installed</dt><dd id="estUnit">—</dd></div>
-            <div><dt>Fleet total</dt><dd id="estTotal">—</dd></div>
-            <div><dt>Lead time</dt><dd id="estLead">—</dd></div>
-          </dl>
-          <p>Sample pricing for this preview. Your fleet engineer confirms final pricing after reviewing the chassis.</p>
+
+        <div class="actions" id="actions">
+          <small id="stepHint">Step 1 of 3</small>
+          <div class="grp">
+            <button class="btn btn-dark" type="button" id="back" hidden>Back</button>
+            <button class="btn btn-red" type="submit" id="next">Next: Floor Length</button>
+          </div>
         </div>
       </form>
     </div>
   </section>
 
-  <section class="dealer" id="dealers" aria-labelledby="dealer-h">
+  <section class="band" id="dealers" aria-labelledby="dealer-h">
     <div class="wrap">
-      <div>
-        <h2 id="dealer-h">Find an Apex Dealer Near You</h2>
-        <p>212 certified dealers and upfitters install, service and stock Apex bodies across the U.S. and Canada.</p>
+      <div class="dealer">
+        <div>
+          <h2 id="dealer-h">Find an Apex Dealer Near You</h2>
+          <p>212 certified dealers and upfitters install, service and stock Apex bodies across the U.S. and Canada.</p>
+        </div>
+        <form id="dealerForm" novalidate>
+          <label for="dzip">Enter your ZIP code</label>
+          <input id="dzip" inputmode="numeric" maxlength="5" placeholder="43215" autocomplete="postal-code">
+          <button class="btn btn-dark" type="submit">Find Dealers</button>
+          <p class="dealer-result" id="dealerResult" aria-live="polite"></p>
+        </form>
       </div>
-      <form id="dealerForm" novalidate>
-        <label for="dzip">Enter your ZIP code</label>
-        <input id="dzip" inputmode="numeric" maxlength="5" placeholder="43215" autocomplete="postal-code">
-        <button class="btn btn-dark" type="submit">Find Dealers</button>
-      </form>
     </div>
   </section>
 </main>
 
-<footer class="site" id="about">
+<footer class="site">
   <div class="wrap">
     <div class="foot-grid">
       <div>
@@ -600,27 +602,27 @@ footer :focus-visible{outline-color:var(--white)}
         <p class="support-meta">Engineering and parts · Mon–Sat, 6 a.m.–8 p.m. CT<br>Have the body serial number ready. It's stamped on the front crossmember.</p>
       </div>
       <div>
-        <h3>CAD &amp; documentation</h3>
+        <h3>Quick links</h3>
         <ul>
-          <li><a href="#about">CAD file portal (STEP, DWG, PDF)</a></li>
-          <li><a href="#specs">Body builder weight sheets</a></li>
-          <li><a href="#about">Hoist installation manuals</a></li>
-          <li><a href="#about">Warranty registration</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Buy &amp; service</h3>
-        <ul>
+          <li><a href="#products">Truck bodies</a></li>
+          <li><a href="#specs">Specifications</a></li>
+          <li><a href="#quote">Quote builder</a></li>
           <li><a href="#dealers">Dealer locator</a></li>
-          <li><a href="#quote">Municipal contract pricing</a></li>
-          <li><a href="#about">Replacement parts</a></li>
-          <li><a href="#about">Become a dealer</a></li>
         </ul>
       </div>
       <div>
-        <h3>About Us</h3>
+        <h3>Resources</h3>
         <ul>
-          <li><a href="#about">Our story</a></li>
+          <li><a href="#specs">Body builder weight sheets</a></li>
+          <li><a href="#about">CAD file portal</a></li>
+          <li><a href="#about">Warranty registration</a></li>
+          <li><a href="#about">Replacement parts</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#about">About us</a></li>
           <li><a href="#about">Our plant</a></li>
           <li><a href="#about">Careers</a></li>
           <li><a href="#about">Contact us</a></li>
@@ -628,8 +630,8 @@ footer :focus-visible{outline-color:var(--white)}
       </div>
     </div>
     <div class="compliance">
-      <p><strong>Engineering compliance.</strong> Apex bodies are installed as final-stage manufacturer builds under 49 CFR Part 567 and meet applicable FMVSS 108 lighting requirements. Structural welds are made to AWS D1.1 by certified welders. Body weights and centers of gravity are published for every model to support chassis OEM body builder guidelines.</p>
-      <div class="badges" aria-label="Certifications"><span>NTEA Member</span><span>AWS D1.1</span><span>FMVSS 108</span><span>49 CFR 567</span></div>
+      <p><strong>Compliance notes.</strong> Apex bodies are installed as final-stage manufacturer builds under 49 CFR Part 567 and meet applicable FMVSS 108 lighting requirements. Structural welds are made to AWS D1.1 by certified welders. Body weights and centers of gravity are published for every model to support chassis OEM body builder guidelines. Payload ratings never exceed the GVWR of the chassis.</p>
+      <div class="badges" aria-label="Memberships and standards"><span class="ntea-badge">NTEA Member</span><span>AWS D1.1</span><span>FMVSS 108</span><span>49 CFR 567</span></div>
     </div>
     <div class="legal"><span>© 2026 Apex Truck Bodies. Built in USA.</span><span>Specifications subject to change without notice.</span></div>
   </div>
@@ -640,18 +642,17 @@ footer :focus-visible{outline-color:var(--white)}
 <script>
 (function(){
   var menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('primaryNav');
-  function setNav(open){nav.classList.toggle('open',open);menuBtn.setAttribute('aria-expanded',open);}
+  function setNav(o){nav.classList.toggle('open',o);menuBtn.setAttribute('aria-expanded',o);}
   menuBtn.addEventListener('click',function(){setNav(!nav.classList.contains('open'));});
   nav.addEventListener('click',function(e){if(e.target.closest('a'))setNav(false);});
 
+  var toast=document.getElementById('toast'),tt;
+  function say(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show');},3400);}
+
+  // Tabs
   var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
   function select(tab,focus){
-    tabs.forEach(function(t){
-      var on=t===tab;
-      t.setAttribute('aria-selected',on);
-      t.tabIndex=on?0:-1;
-      document.getElementById(t.getAttribute('aria-controls')).hidden=!on;
-    });
+    tabs.forEach(function(t){var on=t===tab;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!on;});
     if(focus)tab.focus();
   }
   tabs.forEach(function(t,i){
@@ -665,52 +666,49 @@ footer :focus-visible{outline-color:var(--white)}
       if(n){e.preventDefault();select(n,true);}
     });
   });
-  document.querySelectorAll('[data-tab]').forEach(function(a){
-    a.addEventListener('click',function(){select(document.getElementById(a.dataset.tab));});
-  });
-
-  var toast=document.getElementById('toast'),tt;
-  function say(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show');},3400);}
+  document.querySelectorAll('[data-tab]').forEach(function(a){a.addEventListener('click',function(){select(document.getElementById(a.dataset.tab));});});
 
   document.addEventListener('click',function(e){
     var b=e.target.closest('[data-pdf]');if(!b)return;
     b.classList.add('done');b.querySelector('span').textContent='Spec sheet ready';
-    say(b.dataset.pdf+' spec sheet requested. PDF delivery is connected in the production build.');
+    say(b.dataset.pdf+' spec sheet requested. PDF delivery connects in the production build.');
   });
 
+  // Dealer locator
   document.getElementById('dealerForm').addEventListener('submit',function(e){
     e.preventDefault();
-    var z=document.getElementById('dzip').value.trim();
-    say(/^\d{5}$/.test(z)?'Dealer search for '+z+' connects to the dealer database in the production build.':'Enter a 5-digit ZIP code to find dealers.');
+    var z=document.getElementById('dzip').value.trim(),r=document.getElementById('dealerResult');
+    r.textContent=/^\d{5}$/.test(z)?'Dealer search for '+z+' connects to the dealer database in the production build.':'Enter a 5-digit ZIP code to find dealers.';
   });
 
-  var BASE={db:{9:8900,10:9800,12:11900,14:13400,16:14900},ld:{9:5600,10:6100,12:7200,14:8300,16:9400},fb:{9:4900,10:5400,12:6500,14:8900,16:9600}};
-  var DISC={small:0,mid:.06,ent:.11},LEAD={small:'2–3 weeks',mid:'4–6 weeks',ent:'8–10 weeks'};
-  var NAMES={db:'Commercial Dump Body',ld:'Landscape & Dovetail Body',fb:'Heavy-Duty Flatbed'};
-  var OK=/(f-?\s?[345]50|ram\s?[345]500|silverado\s?[345]500\s?hd|[345]500hd)/i;
-  var form=document.getElementById('fleetForm'),qty=document.getElementById('qty'),chassis=document.getElementById('chassis'),err=document.getElementById('chassisErr');
-  function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
-  form.querySelectorAll('input[name="units"]').forEach(function(r){
-    r.addEventListener('change',function(){qty.value={small:4,mid:12,ent:40}[r.value];});
-  });
+  // Quote builder
+  var form=document.getElementById('builder'),steps=[].slice.call(form.querySelectorAll('.step')),prog=[].slice.call(form.querySelectorAll('.progress div'));
+  var back=document.getElementById('back'),next=document.getElementById('next'),hint=document.getElementById('stepHint'),cur=1;
+  var LABEL={1:'Next: Floor Length',2:'Next: Contact Details',3:'Get Instant Fleet Estimate'};
+  function show(n){
+    cur=n;
+    steps.forEach(function(s){s.hidden=+s.dataset.step!==n;});
+    prog.forEach(function(p){var k=+p.dataset.p;p.classList.toggle('on',k===n);p.classList.toggle('done',k<n);});
+    back.hidden=n===1;next.textContent=LABEL[n];hint.textContent='Step '+n+' of 3';
+  }
+  back.addEventListener('click',function(){show(cur-1);});
+  function setErr(id,msg){var el=document.getElementById(id);el.textContent=msg;var inp=el.previousElementSibling;if(msg)inp.setAttribute('aria-invalid','true');else inp.removeAttribute('aria-invalid');return !msg;}
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    if(!OK.test(chassis.value)){
-      err.textContent='We don’t list that chassis yet. Try Ford F-550, RAM 5500 or Chevy Silverado 3500HD, or call 1-800-555-0142.';
-      chassis.setAttribute('aria-invalid','true');chassis.focus();return;
-    }
-    err.textContent='';chassis.removeAttribute('aria-invalid');
-    var tier=form.units.value,type=form.bodyType.value,len=form.deckLen.value;
-    var n=Math.max(1,Math.min(500,parseInt(qty.value,10)||1));
-    var unit=BASE[type][len]*(1-DISC[tier]);
-    document.getElementById('estTitle').textContent=n+' × '+len+' ft '+NAMES[type]+' on '+chassis.value;
-    document.getElementById('estUnit').textContent=money(unit*.95)+'–'+money(unit*1.08);
-    document.getElementById('estTotal').textContent=money(unit*n*.95)+'–'+money(unit*n*1.08);
-    document.getElementById('estLead').textContent=LEAD[tier];
-    var est=document.getElementById('estimate');est.hidden=false;
-    est.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest'});
+    if(cur<3){show(cur+1);return;}
+    var nm=document.getElementById('name'),em=document.getElementById('email');
+    var ok1=setErr('nameErr',nm.value.trim()?'':'Enter your name so we know who to reply to.');
+    var ok2=setErr('emailErr',/^\S+@\S+\.\S+$/.test(em.value.trim())?'':'Enter a valid work email, for example name@company.com.');
+    if(!ok1){nm.focus();return;}
+    if(!ok2){em.focus();return;}
+    var f=form.elements;
+    var rows=[['Body',f.body.value],['Chassis',f.make.value+(f.chassisModel.value?' '+f.chassisModel.value:'')],['Floor length',f.floor.value],['Units',f.qty.value],['Contact',f.name.value+(f.company.value?', '+f.company.value:'')],['Reply to',f.email.value]];
+    var dl=document.getElementById('doneList');dl.textContent='';
+    rows.forEach(function(r){var d=document.createElement('div'),t=document.createElement('dt'),v=document.createElement('dd');t.textContent=r[0];v.textContent=r[1];d.appendChild(t);d.appendChild(v);dl.appendChild(d);});
+    steps.forEach(function(s){s.hidden=true;});
+    document.getElementById('actions').hidden=true;
+    form.querySelector('.progress').hidden=true;
+    document.getElementById('done').hidden=false;
   });
 })();
 </script>
-
-</body></html>
