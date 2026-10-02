@@ -84,7 +84,7 @@ nav.primary a:hover{color:var(--white);border-bottom-color:var(--red)}
 /* Hero */
 .hero{position:relative;isolation:isolate;overflow:hidden;background:var(--bg)}
 .hero-photo{position:absolute;inset:0;z-index:-3;background:linear-gradient(135deg,#0F172A,#1E293B)}
-.hero-photo img{width:100%;height:100%;object-fit:cover;animation:heroZoom 26s ease-in-out infinite alternate;transform-origin:60% 50%}
+.hero-photo video{width:100%;height:100%;object-fit:cover}
 .hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(9,13,22,.95) 0%,rgba(9,13,22,.82) 45%,rgba(9,13,22,.45) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 35%)}
 .hero-glow{position:absolute;z-index:-1;border-radius:50%;filter:blur(70px);pointer-events:none;animation:pulseGlow 7s ease-in-out infinite}
 .hero-glow.g1{width:520px;height:520px;right:-120px;top:-140px;background:rgba(220,38,38,.38)}
@@ -149,27 +149,16 @@ section.band{padding-block:clamp(64px,8vw,108px)}
 @media (max-width:1180px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:620px){.products{grid-template-columns:minmax(0,1fr)}}
 
-/* Equipment carousel: scroll-snap track, centered slide zooms in, neighbors recede */
-.carousel{position:relative;overflow:hidden;padding-block:28px}
-.track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-block:28px;padding-inline:max(var(--gutter),calc(50% - 200px));-webkit-overflow-scrolling:touch}
-.track::-webkit-scrollbar{display:none}
-.track:focus-visible{outline-offset:-3px}
-.slide{flex:0 0 min(400px,80vw);scroll-snap-align:center;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;transform:scale(.88);opacity:.55;transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .5s,border-color .3s,box-shadow .5s}
-.slide .media{aspect-ratio:16/10}
-.slide.active{transform:scale(1.06);opacity:1;border-color:var(--red);box-shadow:0 24px 60px rgba(0,0,0,.55)}
-.slide.active .media img{transform:scale(1.06)}
-.slide .media img{transition:transform 1.2s ease}
-.slide.card:hover{transform:scale(.88);border-color:var(--line)}
-.slide.card.active:hover{transform:scale(1.06);border-color:var(--red)}
-.car-controls{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:8px}
-.dots{display:flex;gap:8px}
-.dots i{width:28px;height:4px;background:var(--line-strong);border-radius:2px;transition:background .3s,width .3s}
-.dots i.on{background:var(--red);width:48px}
-.arrows{display:flex;gap:10px}
-.arrow{width:52px;height:52px;display:grid;place-items:center;background:var(--panel);border:1px solid var(--line-strong);border-radius:3px;color:var(--white);cursor:pointer;transition:background .15s,border-color .15s}
-.arrow:hover{background:var(--red);border-color:var(--red)}
-.arrow svg{width:22px;height:22px}
-@media (prefers-reduced-motion:reduce){.slide,.slide .media img{transition:none}}
+/* Product grid: 16:9 image wrap with hover zoom, spec badge, spec list and two actions */
+.products{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card .card-image-wrap{aspect-ratio:16/9}
+.card:hover .media img{transform:scale(1.06)}
+.img-badge{position:absolute;left:12px;top:12px;z-index:2;background:var(--red);color:var(--white);padding:5px 10px;border-radius:3px;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.card-actions{display:flex;gap:10px;flex-wrap:wrap}
+.card-actions .btn{flex:1 1 130px;min-height:44px}
+.btn-sm{padding:10px 16px;font-size:.88rem}
+@media (max-width:1100px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.products{grid-template-columns:minmax(0,1fr)}}
 
 /* Plant banner */
 .plant{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--panel);border:1px solid var(--line);border-radius:4px;overflow:hidden}
@@ -336,7 +325,9 @@ footer.site{background:#05080F;border-top:1px solid var(--line);margin-top:clamp
 <main id="main">
   <section class="hero" id="top" aria-labelledby="hero-h">
     <div class="hero-photo" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2000&q=85" alt="" width="2000" height="1200" fetchpriority="high" onerror="this.remove()">
+      <video autoplay loop muted playsinline preload="auto" poster="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2000&q=85">
+        <source src="https://cdn.coverr.co/videos/coverr-trucks-driving-on-a-highway-4573/1080p.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="hero-shade" aria-hidden="true"></div>
     <div class="hero-grid" aria-hidden="true"></div>
@@ -368,88 +359,91 @@ footer.site{background:#05080F;border-top:1px solid var(--line);margin-top:clamp
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <p class="eyebrow">Our Products</p>
-          <h2 id="prod-h">Equipment Lineup</h2>
+          <p class="eyebrow">Product Catalog</p>
+          <h2 id="prod-h">Body Lines for Every Chassis</h2>
           <span class="rule" aria-hidden="true"></span>
         </div>
-        <p>Six series on one build standard: the same welded understructure, LED lighting and parts catalog across every body and trailer.</p>
+        <p>Six lines on one build standard: the same welded understructure, LED lighting and parts catalog across every body.</p>
       </div>
-    </div>
-    <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Equipment lineup">
-      <div class="track" id="track" tabindex="0">
-        <article class="card slide" id="slide-1" role="group" aria-roledescription="slide" aria-label="1 of 6">
-          <div class="media"><span class="fallback" aria-hidden="true">Skirted Series</span>
-            <img src="https://images.unsplash.com/photo-1586528116311?auto=format&fit=crop&w=900&q=80" alt="Skirted series truck body" width="900" height="560" loading="lazy" onerror="this.remove()"></div>
+      <div class="products">
+        <article class="card">
+          <div class="card-image-wrap media"><span class="fallback" aria-hidden="true">Landscape & Dovetail Beds</span>
+            <img src="https://images.unsplash.com/photo-1581092160607?auto=format&fit=crop&w=800&q=80" alt="Landscape and dovetail bed" width="800" height="450" loading="lazy" onerror="this.remove()">
+            <span class="img-badge">Class 3–5</span></div>
           <div class="card-body">
-            <span class="tag">SK · Series 1 of 6</span>
-            <h3>Skirted Series</h3>
-            <p>Full-skirt flatbeds with a clean, enclosed look and tie-down access along the rails.</p>
-            <ul><li>Skirted side panels over the frame</li><li>Stake pockets and recessed tie-downs</li><li>Fits Class 3–5 chassis</li></ul>
-            <div class="card-foot"><a class="link-arrow" href="#quote">Request a quote</a></div>
+            <span class="tag">LD Series</span>
+            <h3>Landscape & Dovetail Beds</h3>
+            <p>Low-angle beds for mowers, trailers and compact equipment.</p>
+            <ul><li>Fold-down ramps, 5,000 lb pair</li><li>Removable 24" sides</li><li>Trimmer and blower racks</li></ul>
+            <div class="card-foot"><span>12–16 ft bodies</span></div>
+            <div class="card-actions"><a class="btn btn-red btn-sm" href="#quote">Request Quote</a><a class="btn btn-line btn-sm" href="#specs">View Specs</a></div>
           </div>
         </article>
-        <article class="card slide" id="slide-2" role="group" aria-roledescription="slide" aria-label="2 of 6">
-          <div class="media"><span class="fallback" aria-hidden="true">Landscape Series</span>
-            <img src="https://images.unsplash.com/photo-1541888946425?auto=format&fit=crop&w=900&q=80" alt="Landscape series truck body" width="900" height="560" loading="lazy" onerror="this.remove()"></div>
+        <article class="card">
+          <div class="card-image-wrap media"><span class="fallback" aria-hidden="true">Heavy-Duty Dump Bodies</span>
+            <img src="https://images.unsplash.com/photo-1504307651254?auto=format&fit=crop&w=800&q=80" alt="Heavy-duty dump body" width="800" height="450" loading="lazy" onerror="this.remove()">
+            <span class="img-badge">10-ga steel</span></div>
           <div class="card-body">
-            <span class="tag">LS · Series 2 of 6</span>
-            <h3>Landscape Series</h3>
-            <p>Dovetail and drop-side beds built for mowers, trailers and compact equipment.</p>
-            <ul><li>Fold-down ramps and removable sides</li><li>Trimmer and blower racks</li><li>12–16 ft bed lengths</li></ul>
-            <div class="card-foot"><a class="link-arrow" href="#quote">Request a quote</a></div>
+            <span class="tag">DB Series</span>
+            <h3>Heavy-Duty Dump Bodies</h3>
+            <p>Hoist-equipped bodies for municipal, snow and contractor work.</p>
+            <ul><li>2–6 yd³ capacity</li><li>AR450 floor option</li><li>3-way tailgate, spreader-ready</li></ul>
+            <div class="card-foot"><span>9–14 ft bodies</span></div>
+            <div class="card-actions"><a class="btn btn-red btn-sm" href="#quote">Request Quote</a><a class="btn btn-line btn-sm" href="#specs" data-tab="tab-db">View Specs</a></div>
           </div>
         </article>
-        <article class="card slide" id="slide-3" role="group" aria-roledescription="slide" aria-label="3 of 6">
-          <div class="media"><span class="fallback" aria-hidden="true">Flatbed Series</span>
-            <img src="https://images.unsplash.com/photo-1586191582056?auto=format&fit=crop&w=900&q=80" alt="Flatbed series truck body" width="900" height="560" loading="lazy" onerror="this.remove()"></div>
+        <article class="card">
+          <div class="card-image-wrap media"><span class="fallback" aria-hidden="true">Heavy-Duty Flatbeds</span>
+            <img src="https://images.unsplash.com/photo-1601584115197?auto=format&fit=crop&w=800&q=80" alt="Heavy-duty flatbed" width="800" height="450" loading="lazy" onerror="this.remove()">
+            <span class="img-badge">Class 3–6</span></div>
           <div class="card-body">
-            <span class="tag">FB · Series 3 of 6</span>
-            <h3>Flatbed Series</h3>
-            <p>General-purpose steel decks for contractors, utilities and towing operations.</p>
-            <ul><li>10-gauge deck on structural channel</li><li>Gooseneck subframe option</li><li>9–16 ft deck lengths</li></ul>
-            <div class="card-foot"><a class="link-arrow" href="#quote">Request a quote</a></div>
+            <span class="tag">FB Series</span>
+            <h3>Heavy-Duty Flatbeds</h3>
+            <p>Steel decks on structural channel for contractors and utilities.</p>
+            <ul><li>Stake pockets on 24" centers</li><li>Formed rub rails, recessed tie-downs</li><li>Gooseneck subframe option</li></ul>
+            <div class="card-foot"><span>9–16 ft bodies</span></div>
+            <div class="card-actions"><a class="btn btn-red btn-sm" href="#quote">Request Quote</a><a class="btn btn-line btn-sm" href="#specs">View Specs</a></div>
           </div>
         </article>
-        <article class="card slide" id="slide-4" role="group" aria-roledescription="slide" aria-label="4 of 6">
-          <div class="media"><span class="fallback" aria-hidden="true">Platform Series</span>
-            <img src="https://images.unsplash.com/photo-1581092160607?auto=format&fit=crop&w=900&q=80" alt="Platform series truck body" width="900" height="560" loading="lazy" onerror="this.remove()"></div>
+        <article class="card">
+          <div class="card-image-wrap media"><span class="fallback" aria-hidden="true">Dry Freight Van Bodies</span>
+            <img src="https://images.unsplash.com/photo-1586528116311?auto=format&fit=crop&w=800&q=80" alt="Dry freight van body" width="800" height="450" loading="lazy" onerror="this.remove()">
+            <span class="img-badge">Class 4–6</span></div>
           <div class="card-body">
-            <span class="tag">PL · Series 4 of 6</span>
-            <h3>Platform Series</h3>
-            <p>Open platform bodies with flush decks for pallets, pipe and oversized loads.</p>
-            <ul><li>Flush deck with low-profile rails</li><li>Headache rack and toolbox options</li><li>Class 3–6 chassis fit</li></ul>
-            <div class="card-foot"><a class="link-arrow" href="#quote">Request a quote</a></div>
+            <span class="tag">DF Series</span>
+            <h3>Dry Freight Van Bodies</h3>
+            <p>Smooth-sided cargo bodies for parcel, retail and last-mile fleets.</p>
+            <ul><li>Aluminum or FRP walls</li><li>Roll-up or swing doors</li><li>Interior E-track standard</li></ul>
+            <div class="card-foot"><span>12–26 ft bodies</span></div>
+            <div class="card-actions"><a class="btn btn-red btn-sm" href="#quote">Request Quote</a><a class="btn btn-line btn-sm" href="#specs" data-tab="tab-df">View Specs</a></div>
           </div>
         </article>
-        <article class="card slide" id="slide-5" role="group" aria-roledescription="slide" aria-label="5 of 6">
-          <div class="media"><span class="fallback" aria-hidden="true">Dump Series</span>
-            <img src="https://images.unsplash.com/photo-1508873696983?auto=format&fit=crop&w=900&q=80" alt="Dump series truck body" width="900" height="560" loading="lazy" onerror="this.remove()"></div>
+        <article class="card">
+          <div class="card-image-wrap media"><span class="fallback" aria-hidden="true">Refrigerated Reefers</span>
+            <img src="https://images.unsplash.com/photo-1591768793355?auto=format&fit=crop&w=800&q=80" alt="Refrigerated reefer body" width="800" height="450" loading="lazy" onerror="this.remove()">
+            <span class="img-badge">2.5" foam core</span></div>
           <div class="card-body">
-            <span class="tag">DS · Series 5 of 6</span>
-            <h3>Dump Series</h3>
-            <p>Hoist-equipped dump bodies for municipal, snow and contractor work.</p>
-            <ul><li>10-gauge sides, AR450 floor option</li><li>3-way tailgate, spreader-ready</li><li>9–14 ft, 2–6 yd³</li></ul>
-            <div class="card-foot"><a class="link-arrow" href="#quote">Request a quote</a></div>
+            <span class="tag">RF Series</span>
+            <h3>Refrigerated Reefers</h3>
+            <p>Insulated bodies for fresh and frozen loads, reefer unit prep included.</p>
+            <ul><li>FRP skins over foam core</li><li>Sealed rear and side doors</li><li>Fits Class 4–6 chassis</li></ul>
+            <div class="card-foot"><span>14–24 ft bodies</span></div>
+            <div class="card-actions"><a class="btn btn-red btn-sm" href="#quote">Request Quote</a><a class="btn btn-line btn-sm" href="#specs" data-tab="tab-rf">View Specs</a></div>
           </div>
         </article>
-        <article class="card slide" id="slide-6" role="group" aria-roledescription="slide" aria-label="6 of 6">
-          <div class="media"><span class="fallback" aria-hidden="true">Turtleback Trailers</span>
-            <img src="https://images.unsplash.com/photo-1504307651254?auto=format&fit=crop&w=900&q=80" alt="Turtleback trailer" width="900" height="560" loading="lazy" onerror="this.remove()"></div>
+        <article class="card">
+          <div class="card-image-wrap media"><span class="fallback" aria-hidden="true">Service & Utility Bodies</span>
+            <img src="https://images.unsplash.com/photo-1581091226825?auto=format&fit=crop&w=800&q=80" alt="Service and utility body" width="800" height="450" loading="lazy" onerror="this.remove()">
+            <span class="img-badge">6–10 compartments</span></div>
           <div class="card-body">
-            <span class="tag">TT · Series 6 of 6</span>
-            <h3>Turtleback Trailers</h3>
-            <p>Heavy-duty trailers with a rounded turtleback profile for equipment hauling.</p>
-            <ul><li>Rounded deck for smooth loading</li><li>Heavy-duty axles and brakes</li><li>Multiple deck lengths</li></ul>
-            <div class="card-foot"><a class="link-arrow" href="#quote">Request a quote</a></div>
+            <span class="tag">SU Series</span>
+            <h3>Service & Utility Bodies</h3>
+            <p>Compartmented bodies for trades, utilities and mobile service crews.</p>
+            <ul><li>Galvanneal steel or aluminum</li><li>Adjustable shelving, sealed doors</li><li>Crane and ladder rack ready</li></ul>
+            <div class="card-foot"><span>8–11 ft bodies</span></div>
+            <div class="card-actions"><a class="btn btn-red btn-sm" href="#quote">Request Quote</a><a class="btn btn-line btn-sm" href="#specs" data-tab="tab-su">View Specs</a></div>
           </div>
         </article>
-      </div>
-    </div>
-    <div class="wrap car-controls">
-      <div class="dots" id="dots" aria-hidden="true"></div>
-      <div class="arrows">
-        <button class="arrow" id="prev" type="button" aria-label="Previous series"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <button class="arrow" id="nextS" type="button" aria-label="Next series"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
     </div>
   </section>
@@ -764,18 +758,5 @@ footer.site{background:#05080F;border-top:1px solid var(--line);margin-top:clamp
     document.getElementById('done').hidden=false;
   });
 
-  // Equipment carousel
-  var track=document.getElementById('track'),slides=[].slice.call(track.children),dots=document.getElementById('dots'),idx=0;
-  slides.forEach(function(){dots.appendChild(document.createElement('i'));});
-  function mark(n){idx=n;slides.forEach(function(s,i){s.classList.toggle('active',i===n);});[].slice.call(dots.children).forEach(function(d,i){d.classList.toggle('on',i===n);});}
-  function nearest(){var c=track.scrollLeft+track.clientWidth/2,best=0,bd=1e9;slides.forEach(function(s,i){var d=Math.abs(s.offsetLeft+s.offsetWidth/2-c);if(d<bd){bd=d;best=i;}});return best;}
-  var raf;track.addEventListener('scroll',function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){mark(nearest());});},{passive:true});
-  function go(n){n=Math.max(0,Math.min(slides.length-1,n));var s=slides[n];track.scrollTo({left:s.offsetLeft+s.offsetWidth/2-track.clientWidth/2,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});mark(n);}
-  document.getElementById('prev').addEventListener('click',function(){go(idx-1);});
-  document.getElementById('nextS').addEventListener('click',function(){go(idx+1);});
-  slides.forEach(function(s,i){s.addEventListener('click',function(e){if(!e.target.closest('a')&&i!==idx)go(i);});});
-  track.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(idx+1);}else if(e.key==='ArrowLeft'){e.preventDefault();go(idx-1);}});
-  window.addEventListener('load',function(){go(0);});window.addEventListener('resize',function(){go(idx);});
-  mark(0);
 })();
 </script>
